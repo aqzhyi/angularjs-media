@@ -1,3 +1,7 @@
+;'use strict';
+if (!-[1,]) {
+    document.createElement('flash');
+}
 ;angular
     .module('media.directives', [])
     .directive('flash', function() {

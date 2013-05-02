@@ -7,9 +7,11 @@ Restrict is "A" for IE 8, that mean you don't need create element yourself.
 
 IE 7 is untested.
 
+## Modify restrict to "E" maybe better?
+
 ## Requirements
 
-AngularJS v1.0.0+ is currently required.
+- AngularJS
 
 Tested on 1.0.4, 1.0.6.
 
