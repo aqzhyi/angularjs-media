@@ -1,0 +1,29 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Media Directives</title>
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="vendor/bootstrap.css">
+</head>
+<body>
+  <div ng-controller="navbarCtrl" class="navbar-fixed-top navbar-inverse navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <span class="brand">AngularJS Media Directives</span>
+        <ul class="nav">
+          <li ng-class="{active: isActive('/twitch')}" class="divider-vertical"><a href="/#!/twitch">Twitch</a></li>
+          <li ng-class="{active: isActive('/justin')}" class="divider-vertical"><a href="/#!/justin">Justin</a></li>
+          <li ng-class="{active: isActive('/flash')}" class="divider-vertical"><a href="/#!/flash">flash</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div ng-view></div>
+  
+  <script src="vendor/angular.min-1.0.6.js"></script>
+  <script src="lib/angularjs.media.directives.js"></script>
+  <script src="js/demo.js"></script>
+</body>
+</html>

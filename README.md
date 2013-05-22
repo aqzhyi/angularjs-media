@@ -1,49 +1,58 @@
-Media directives for AngularJS
+AngularJS Media Directives
 =================
 
-## Compatibility
+## Features
 
-Restrict is "A" for IE 8, that mean you don't need create element yourself.
+Simply embed media such as flash, twitch, justin player with simple html components.
 
-IE 7 is untested.
+Simple demo: [/app]
 
-## Modify restrict to "E" maybe better?
+[/app]: https://github.com/Pleasurazy/angularjs-media/tree/master/app
+
+![](https://raw.github.com/Pleasurazy/angularjs-media/master/app/files/demo.jpg)
 
 ## Requirements
 
-- AngularJS
-
-Tested on 1.0.4, 1.0.6.
+- AngularJS, tested on 1.0.6.
 
 ## Installation
 
 ```js
-angular.module('yourApp', ['media.directives']);
+var app = angular.module('app', ['angularjs.media.directives']);
 ```
 
 ## Usage
 
+---
+
+to embed flash player:
+
 ```html
-<i flash="{src:'//sc2clan.tw/serial/common/270x60/mis1002.swf', width:270, height:60}"></i>
+  <flash width="270" height="60" src="files/Inter-banner.swf"></flash>
+  <flash width="270" height="60" src="files/AMD-banner.swf"></flash>
+  <flash width="270" height="60" src="files/MSI-banner.swf"></flash>
 ```
+
+to embed twitch player and chatroom:
+
 ```html
-<i flash="{src:'//sc2clan.tw/serial/common/270x60/mis1002.swf', width:270, height:60}"></i>
+  <twitch width="600" height="400" channel="honeydotcakes"></twitch>
+  <iframe width="300" height="400" twitch-chat channel="honeydotcakes"></iframe>
 ```
+
+---
+
+to embed justin player and chatroom:
+
 ```html
-<i flash="{src:'//sc2clan.tw/serial/common/270x60/2012Q1-kingston.swf', width:270, height:60}"></i>
+  <twitch width="600" height="400" channel="ms_yuyu"></twitch>
+  <iframe width="300" height="400" twitch-chat-channel="ms_yuyu"></iframe>
 ```
-```html
-<i flash="{src:'//sc2clan.tw/serial/common/270x60/AVerMedia.swf', width:270, height:60}"></i>
-```
-```html
-<i twitch-player="{channel:'witness1129', width:400, height:300}"></i>
-```
-```html
-<i twitch-chatroom="{channel:'witness1129', width:400, height:300}"></i>
-```
-```html
-<i justin-player="{channel:'witness1129', width:400, height:300}"></i>
-```
-```html
-<i justin-chatroom="{channel:'witness1129', width:400, height:300}"></i>
-```
+
+Notice: Chatroom attribute can be `twitch-chat` and `channel` or `twitch-chat-channel` self alone.
+
+## References
+
++ [Twitch-API] documents.
+
+[Twitch-API]: https://github.com/justintv/Twitch-API/blob/master/embedding.md
