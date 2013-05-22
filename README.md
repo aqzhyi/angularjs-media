@@ -23,8 +23,6 @@ var app = angular.module('app', ['angularjs.media.directives']);
 
 ## Usage
 
----
-
 to embed flash player:
 
 ```html
@@ -32,6 +30,8 @@ to embed flash player:
   <flash width="270" height="60" src="files/AMD-banner.swf"></flash>
   <flash width="270" height="60" src="files/MSI-banner.swf"></flash>
 ```
+
+---
 
 to embed twitch player and chatroom:
 
