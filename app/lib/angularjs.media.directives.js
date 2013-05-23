@@ -4,6 +4,7 @@ angular.module('angularjs.media.directives', [])
       document.createElement('twitch');
       document.createElement('justin');
       document.createElement('flash');
+      document.createElement('youtube');
     }
   })
   .value('MediaFlashPlayerEmbed', function() {
