@@ -6,6 +6,7 @@ app.config(function($routeProvider, $locationProvider) {
     .when('/twitch', {templateUrl: '/partials/twitch.html'})
     .when('/justin', {templateUrl: '/partials/justin.html'})
     .when('/flash', {templateUrl: '/partials/flash.html'})
+    .when('/youtube', {templateUrl: '/partials/youtube.html'})
   ;
 
   $routeProvider.otherwise({

@@ -81,6 +81,55 @@ angular.module('angularjs.media.directives', [])
       }
     };
   })
+  .value('YoutubePlayerEmbed', function() {
+    'use strict';
+    return {
+      scope: {
+        autoplay: "=",
+        start: "@",
+        end: "@",
+        params: "@",
+        v: "@"
+      },
+      restrict: 'E',
+      replace: true,
+      template: '<iframe ng-src="http://www.youtube.com/embed/{{v}}{{querys}}" frameborder="0" allowfullscreen></iframe>',
+      compile: function(elem, attrs, transcludeFn) {
+        return function link (scope, element, attrs) {
+          var
+            paramsObject = {},
+            paramsString = '?';
+
+          // If <youtube params=""> already setup, then passing variable directly.
+          if (attrs.params) {
+            scope.querys = attrs.params;
+            return;
+          }
+
+          if (scope.autoplay) {
+            paramsObject.autoplay = 1;
+          }
+
+          if (attrs.start) {
+            paramsObject.start = attrs.start;
+          }
+
+          if (attrs.end) {
+            paramsObject.end = attrs.end;
+          }
+
+          angular.forEach(paramsObject, function(value, key) {
+            paramsString = paramsString + key + '=' + value + '&';
+          });
+
+          scope.querys = paramsString;
+        };
+      }
+    };
+  })
+  .directive('youtube', function factory(YoutubePlayerEmbed) {
+    return YoutubePlayerEmbed();
+  })
   .directive('flash', function factory(MediaFlashPlayerEmbed){
     return MediaFlashPlayerEmbed();
   })
