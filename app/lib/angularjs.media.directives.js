@@ -22,7 +22,7 @@ angular.module('angularjs.media.directives', [])
         '</object>',
       compile: function(elem, attrs, transcludeFn) {
         return function link (scope, element, attrs) {
-          // Prevent error when the Justin player connect before scope.channel unready. (e.g. When ng-view)
+          // Prevent error when the flash player connect source before scope.channel unready. (e.g. When ng-view)
           scope.$watch('src', function(src) {
             element.append('<param name="movie" value="' + src + '" />');
           });
@@ -55,7 +55,7 @@ angular.module('angularjs.media.directives', [])
       replace: true,
       compile: function(elem, attrs, transcludeFn) {
         return function link (scope, element, attrs) {
-          // Prevent error when the Justin player connect before scope.channel unready. (e.g. When ng-view)
+          // Prevent error when the Justin player connect source before scope.channel unready. (e.g. When ng-view)
           scope.$watch('channel', function(channel) {
             element.append('<param name="movie" value="http://www.' + configure.type + '.tv/widgets/live_embed_player.swf" />');
           });
