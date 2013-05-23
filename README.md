@@ -33,6 +33,17 @@ to embed flash player:
 
 ---
 
+to embed youtube player:
+
+```html
+  <youtube width="466" height="250" v="BlQ2tMQzg80" start="64" end="120" autoplay="1"></youtube>
+  <youtube width="466" height="250" v="BlQ2tMQzg80" params="?autoplay=1&start=25"></youtube>
+```
+
+Notice: If `<youtube params="">` already setup, then passing variable directly.
+
+---
+
 to embed twitch player and chatroom:
 
 ```html
