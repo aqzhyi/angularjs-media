@@ -19,3 +19,7 @@ app.controller('navbarCtrl', function($scope, $location) {
     return $location.path() === path;
   };
 });
+
+app.controller('testCtrl', function($scope) {
+  $scope.firstVideo = 'BlQ2tMQzg80'; 
+});

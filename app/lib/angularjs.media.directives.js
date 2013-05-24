@@ -87,8 +87,8 @@ angular.module('angularjs.media.directives', [])
     return {
       scope: {
         autoplay: "=",
-        start: "@",
-        end: "@",
+        start: "=",
+        end: "=",
         params: "@",
         v: "@"
       },
@@ -99,7 +99,11 @@ angular.module('angularjs.media.directives', [])
         return function link (scope, element, attrs) {
           var
             paramsObject = {},
-            paramsString = '?';
+            paramsString = '';
+
+          attrs.$observe('v', function(v) {
+            scope.v = v;
+          });
 
           // If <youtube params=""> already setup, then passing variable directly.
           if (attrs.params) {
@@ -107,23 +111,26 @@ angular.module('angularjs.media.directives', [])
             return;
           }
 
+          // Else make querys.
           if (scope.autoplay) {
             paramsObject.autoplay = 1;
           }
 
-          if (attrs.start) {
-            paramsObject.start = attrs.start;
+          if (scope.start) {
+            paramsObject.start = scope.start;
           }
 
-          if (attrs.end) {
-            paramsObject.end = attrs.end;
+          if (scope.end) {
+            paramsObject.end = scope.end;
           }
 
           angular.forEach(paramsObject, function(value, key) {
             paramsString = paramsString + key + '=' + value + '&';
           });
 
-          scope.querys = paramsString;
+          if ('' !== paramsString) {
+            scope.querys = '?' + paramsString;
+          }
         };
       }
     };

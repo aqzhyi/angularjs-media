@@ -9,11 +9,13 @@ Simple demo: [/app]
 
 [/app]: https://github.com/Pleasurazy/angularjs-media/tree/master/app
 
+![](https://raw.github.com/Pleasurazy/angularjs-media/master/app/files/demo2.jpg)
+
 ![](https://raw.github.com/Pleasurazy/angularjs-media/master/app/files/demo.jpg)
 
 ## Requirements
 
-- AngularJS, tested on 1.0.6.
+- AngularJS, tested on 1.0.7.
 
 ## Installation
 
@@ -36,11 +38,20 @@ to embed flash player:
 to embed youtube player:
 
 ```html
-  <youtube width="466" height="250" v="BlQ2tMQzg80" start="64" end="120" autoplay="1"></youtube>
-  <youtube width="466" height="250" v="BlQ2tMQzg80" params="?autoplay=1&start=25"></youtube>
+  <youtube width="466" height="250" v="BlQ2tMQzg80" start="16" end="30" autoplay="0"></youtube>
+  <youtube width="466" height="250" v="BlQ2tMQzg80" params="?autoplay=1&amp;start=25"></youtube>
+  <youtube width="466" height="250" v="{{firstVideo}}" start="64" end="120" autoplay="1"></youtube>
+  <youtube width="466" height="250" v="{{firstVideo}}?autoplay=1&amp;start=90&amp;end=120"></youtube>
 ```
 
 Notice: If `<youtube params="">` already setup, then passing variable directly.
+
+Params: 
+  v        - {template}   - passing `v` code into to convert youtube embed player.
+  start    - {expression} - passing number setup start time.
+  end      - {expression} - passing number setup end time.
+  autoplay - {expression} - passing 0 or (true|1) for auto start.
+  params   - {template}   - passing string to setup by single attribute.
 
 ---
 
