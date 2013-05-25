@@ -25,7 +25,7 @@ var app = angular.module('app', ['angularjs.media.directives']);
 
 ## Usage
 
-to embed flash player:
+To embed flash player:
 
 ```html
   <flash width="270" height="60" src="files/Inter-banner.swf"></flash>
@@ -33,48 +33,61 @@ to embed flash player:
   <flash width="270" height="60" src="files/MSI-banner.swf"></flash>
 ```
 
+Param: 
+* src - {expression} - passing string url to convert to flash player.
+
 ---
 
-to embed youtube player:
+To embed youtube player:
 
 ```html
   <youtube width="466" height="250" v="BlQ2tMQzg80" start="16" end="30" autoplay="0"></youtube>
-  <youtube width="466" height="250" v="BlQ2tMQzg80" params="?autoplay=1&amp;start=25"></youtube>
+  <youtube width="466" height="250" v="BlQ2tMQzg80" params="?autoplay=1&start=25"></youtube>
   <youtube width="466" height="250" v="{{firstVideo}}" start="64" end="120" autoplay="1"></youtube>
-  <youtube width="466" height="250" v="{{firstVideo}}?autoplay=1&amp;start=90&amp;end=120"></youtube>
+  <youtube width="466" height="250" v="{{firstVideo}}?autoplay=1&start=90&end=120"></youtube>
 ```
+
+Params: 
+* v        - {template}   - passing `v` code to convert youtube embed player.
+* start    - {expression} - passing number setup start time.
+* end      - {expression} - passing number setup end time.
+* autoplay - {expression} - passing 0 or (true|1) for auto start.
+* params   - {template}   - passing string to setup by single attribute.
 
 Notice: If `<youtube params="">` already setup, then passing variable directly.
 
-Params: 
-  v        - {template}   - passing `v` code into to convert youtube embed player.
-  start    - {expression} - passing number setup start time.
-  end      - {expression} - passing number setup end time.
-  autoplay - {expression} - passing 0 or (true|1) for auto start.
-  params   - {template}   - passing string to setup by single attribute.
-
 ---
 
-to embed twitch player and chatroom:
+To embed twitch player and chatroom:
 
 ```html
   <twitch width="600" height="400" channel="honeydotcakes"></twitch>
   <iframe width="300" height="400" twitch-chat channel="honeydotcakes"></iframe>
 ```
 
+Params:
+* channel     - {template}  - passing string of channel name.
+* twitch-chat - (attribute) - identify `iframe` element to embed chatroom.
+
+Notice: Chatroom directive can be `twitch-chat` and `channel` or `twitch-chat-channel` self alone.
+
 ---
 
-to embed justin player and chatroom:
+To embed justin player and chatroom:
 
 ```html
-  <twitch width="600" height="400" channel="ms_yuyu"></twitch>
-  <iframe width="300" height="400" twitch-chat-channel="ms_yuyu"></iframe>
+  <justin width="600" height="400" channel="ms_yuyu"></justin>
+  <iframe width="300" height="400" justin-chat-channel="ms_yuyu"></iframe>
 ```
 
-Notice: Chatroom attribute can be `twitch-chat` and `channel` or `twitch-chat-channel` self alone.
+Params:
+* channel     - {template}  - passing string of channel name.
+* justin-chat - (attribute) - identify `iframe` element to embed chatroom.
+
+Notice: Chatroom directive can be `justin-chat` and `channel` or `justin-chat-channel` self alone.
 
 ## References
 
-+ [Twitch-API] documents.
++ [Twitch-API documents].
 
-[Twitch-API]: https://github.com/justintv/Twitch-API/blob/master/embedding.md
+[Twitch-API documents]: https://github.com/justintv/Twitch-API/blob/master/embedding.md
