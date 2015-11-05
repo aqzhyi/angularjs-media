@@ -11,7 +11,8 @@ angular.module('angularjs.media.directives', [])
     'use strict';
     return {
       scope: {
-        src: "@"
+        src: "@",
+        vars: "@"
       },
       restrict: 'E',
       replace: true,
@@ -26,6 +27,9 @@ angular.module('angularjs.media.directives', [])
           // Prevent error when the flash player connect source before scope.channel unready. (e.g. When ng-view)
           scope.$watch('src', function(src) {
             element.append('<param name="movie" value="' + src + '" />');
+          });
+          scope.$watch('vars', function(vars) {
+            element.append('<param name="flashvars" value="' + vars + '" />');
           });
         };
       }
