@@ -31,10 +31,12 @@ To embed flash player:
   <flash width="270" height="60" src="files/Inter-banner.swf"></flash>
   <flash width="270" height="60" src="files/AMD-banner.swf"></flash>
   <flash width="270" height="60" src="files/MSI-banner.swf"></flash>
+   <flash width="270" height="60" src="games/poker.swf" vars="localeChain=fr_FR;start_volume=50"></flash>
 ```
 
-Param: 
+Params: 
 * src - {expression} - passing string url to convert to flash player.
+* vars - {expression} - passing list of key=value pairs that will be added as a "flashvars" param for the flash player
 
 ---
 
